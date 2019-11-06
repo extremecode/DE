@@ -3,7 +3,7 @@
 ARTIFACTS_PATH=$1
 TEST_REPORT_PATH=$2
 
-echo $ARTIFACTS_PATH $TEST_REPORT_PATH
+echo "Copying artifacts to path" $ARTIFACTS_PATH "and generating test report at path" $TEST_REPORT_PATH
 
 mkdir -p $ARTIFACTS_PATH $TEST_REPORT_PATH
 find . -type f -name '*.jar' -exec cp -at $ARTIFACTS_PATH {} +
