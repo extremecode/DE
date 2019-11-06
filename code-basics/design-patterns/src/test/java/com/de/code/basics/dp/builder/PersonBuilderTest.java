@@ -33,6 +33,7 @@ public class PersonBuilderTest {
         Object[] objs = {person1,person2};
         this.builder.add(person1)
                 .add(person2)
+                .add(new Person("aka","12"))
                 .build();
         assertArrayEquals(objs,personList.toArray());
 
