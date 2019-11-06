@@ -40,4 +40,14 @@ jobs:
       - store_artifacts:
          path: target/site
          destination: /data/reports
+      - store_artifacts:
+          path: code-basics/algorithms/target/*.jar
+          destination: /data/reports
+
+#          ./code-basics/algorithms/target/algorithms-1.0-SNAPSHOT.jar
+#          ./code-basics/data-structures/target/data-structures-1.0-SNAPSHOT.jar
+#          ./code-basics/design-patterns/target/design-patterns-1.0-SNAPSHOT.jar
+#          ./use-cases/target/use-cases-1.0-SNAPSHOT.jar
+
+
 
