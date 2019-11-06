@@ -37,10 +37,11 @@ jobs:
 
       # run build !
       - run: mvn clean install
-      - run: find . -type f -name '*.jar' -exec cp -at target/site {} +
+      - run: mkdir target/artifacts
+      - run: find . -type f -name '*.jar' -exec cp -at target/artifacts {} +
       - store_artifacts:
-         path: target/site
-         destination: /data/reports
+         path: target/artifacts
+         destination: /artifacts/
 
 #          ./code-basics/algorithms/target/algorithms-1.0-SNAPSHOT.jar
 #          ./code-basics/data-structures/target/data-structures-1.0-SNAPSHOT.jar
