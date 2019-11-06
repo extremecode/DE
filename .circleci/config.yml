@@ -37,20 +37,17 @@ jobs:
 
       # run build !
       - run: mvn clean install
-      - run: mkdir target/artifacts
-      - run: find . -type f -name '*.jar' -exec cp -at target/artifacts {} +
+      - run: chmod +x ./dist/build.sh
+      - run: ./dist/build.sh target/artifacts target/reports/test
+#      - run: mkdir -p target/artifacts target/reports/test
+#      - run: find . -type f -name '*.jar' -exec cp -at target/artifacts {} +
+#      - run: find . -type f -path '*surefire-reports*/*' -name '*.xml' -exec cp -at target/reports/test {} +
       - store_artifacts:
          path: target/artifacts
          destination: /artifacts/
-      - store_artifacts:
-          path: target/site
-          destination: /data/reports
+      - store_test_results:
+          path: target/reports/test
 
-
-#          ./code-basics/algorithms/target/algorithms-1.0-SNAPSHOT.jar
-#          ./code-basics/data-structures/target/data-structures-1.0-SNAPSHOT.jar
-#          ./code-basics/design-patterns/target/design-patterns-1.0-SNAPSHOT.jar
-#          ./use-cases/target/use-cases-1.0-SNAPSHOT.jar
 
 
 
