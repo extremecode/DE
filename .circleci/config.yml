@@ -40,3 +40,8 @@ jobs:
       - store_artifacts:
          path: target/site
          destination: tr
+
+      - store_artifacts:
+         root: ./
+         paths:
+           - target/*.jar
