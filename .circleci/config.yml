@@ -37,6 +37,6 @@ jobs:
 
       # run build !
       - run: mvn clean install
-      - store_artifacts:
+      - store_test_results:
          path: target/site
          destination: tr
