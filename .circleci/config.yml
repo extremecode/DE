@@ -39,7 +39,5 @@ jobs:
       - run: mvn clean install
       - store_artifacts:
          path: target/site
-         destination: tr
+         destination: /data/reports
 
-      - store_artifacts:
-         path: code-basics/*.jar
