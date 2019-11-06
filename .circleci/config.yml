@@ -42,6 +42,4 @@ jobs:
          destination: tr
 
       - store_artifacts:
-         root: ./
-         paths:
-           - target/*.jar
+         path: code-basics/*.jar
