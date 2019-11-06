@@ -10,6 +10,7 @@
     <artifactId>pocs</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+	
     <build>
         <plugins>
             <plugin>
