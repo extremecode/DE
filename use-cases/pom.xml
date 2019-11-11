@@ -11,10 +11,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.de</groupId>
+    <groupId>com.de.use.cases</groupId>
     <artifactId>use-cases</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>wildlfy</module>
+    </modules>
 
 </project>
