@@ -170,9 +170,14 @@
                                 <from>
                                     java:8
                                 </from>
+                                <maintainer>akash.sah5@gmail.com</maintainer>
                                 <tags>
                                     <tag>${server.version}</tag>
                                 </tags>
+                                <ports>
+                                    <port>8080</port>
+                                    <port>8443</port>
+                                </ports>
                                 <env>
                                     <IMAGE_BUILD_VERSION>${server.version}</IMAGE_BUILD_VERSION>
                                     <IMAGE_BUILD_NUMBER>1.0.1</IMAGE_BUILD_NUMBER>
