@@ -187,8 +187,10 @@
                                     <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh app-web-server</run>
                                     <run>mkdir -p /var/opt/app</run>
                                     <run>chown -R 811:800 /var/opt/app</run>
+                                    <run>chown -R 811:800 /opt/app</run>
                                     <run>chmod 755 /opt/app/server/bin/standalone.sh</run>
                                 </runCmds>
+                                <user>811</user>
                                 <assembly>
                                     <mode>dir</mode>
                                     <basedir>/</basedir>
