@@ -183,6 +183,7 @@
                                 </volumes>
                                 <optimise>true</optimise>
                                 <runCmds>
+                                    <run>groupadd de -g 800</run>
                                     <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh app-web-server</run>
                                     <run>mkdir -p /var/opt/app</run>
                                     <run>chown -R 811:800 /var/opt/app</run>
