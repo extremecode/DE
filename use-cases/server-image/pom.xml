@@ -194,6 +194,10 @@
                                     <basedir>/</basedir>
                                     <descriptor>assembly.xml</descriptor>
                                 </assembly>
+                                <entryPoint>
+                                    <!-- shell form  -->
+                                    <shell>/opt/app/server/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml</shell>
+                                </entryPoint>
                             </build>
                             <run>
                                 <env>
