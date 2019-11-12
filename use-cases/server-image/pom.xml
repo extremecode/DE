@@ -191,7 +191,7 @@
                                 <assembly>
                                     <mode>dir</mode>
                                     <basedir>/</basedir>
-                                    <descriptor>docker.xml</descriptor>
+                                    <descriptor>assembly.xml</descriptor>
                                 </assembly>
                             </build>
                             <run>
