@@ -25,6 +25,7 @@
         <module>sample-web</module>
         <module>server</module>
         <module>server-image</module>
+
     </modules>
 
 </project>
