@@ -17,7 +17,7 @@
 
     <properties>
         <server.assemble.dir>${project.build.directory}/assemble</server.assemble.dir>
-        <docker.host.address>localhost</docker.host.address>
+<!--        <docker.host.address>localhost</docker.host.address>-->
     </properties>
 
     <dependencies>
