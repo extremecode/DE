@@ -14,9 +14,9 @@ public class AppServerFixture {
 
     protected static final String HOST = System.getProperty("app.web.server.net.HOST_NAME", "localhost");
     protected static final String EXTERNAL_ACCESS_HOST = HOST;
-    protected static final int EXTERNAL_ACCESS_PORT = Integer.getInteger("nom.api.gateway.test.port.https", 443);
-    protected static final int HTTP_PORT = Integer.getInteger("nom.api.gateway.test.port.http", 8080);
-    protected static final int HTTPS_PORT = Integer.getInteger("nom.api.gateway.test.port.https", 8443);
+    protected static final int EXTERNAL_ACCESS_PORT = Integer.getInteger("app.web.server.test.port.http", 443);
+    protected static final int HTTP_PORT = Integer.getInteger("app.web.server.test.port.http", 8080);
+    protected static final int HTTPS_PORT = Integer.getInteger("app.web.server.test.port.https", 8443);
 
     private HttpClientBuilder http;
 

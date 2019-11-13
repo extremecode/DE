@@ -344,7 +344,7 @@
                                 <!--suppress MavenModelInspection -->
                                 <app.web.server.net.HOST_NAME>${docker.host.address}</app.web.server.net.HOST_NAME>
                                 <!--suppress MavenModelInspection -->
-                                <app.web.server.test.port.http>${docker.host.port}</app.web.server.test.port.http>
+                                <app.web.server.test.port.http>${app.port.http}</app.web.server.test.port.http>
                                 <!--suppress MavenModelInspection -->
                                 <nom.api.gateway.test.port.https>${app.port.https}</nom.api.gateway.test.port.https>
                                 <!--suppress MavenModelInspection -->
