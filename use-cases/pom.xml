@@ -19,9 +19,11 @@
     <properties>
         <web.version>1.0-SNAPSHOT</web.version>
         <server.version>1.0-SNAPSHOT</server.version>
+        <web.common.version>1.0-SNAPSHOT</web.common.version>
     </properties>
 
     <modules>
+        <module>web-common</module>
         <module>sample-web</module>
         <module>server</module>
         <module>server-image</module>

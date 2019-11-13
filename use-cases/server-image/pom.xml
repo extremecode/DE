@@ -29,6 +29,11 @@
             <type>zip</type>
             <optional>false</optional>
         </dependency>
+        <dependency>
+            <groupId>com.de.use.cases.web.common</groupId>
+            <artifactId>web-common</artifactId>
+            <version>${web.common.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
