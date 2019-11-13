@@ -3,11 +3,13 @@ package com.de.use.cases.server;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.io.IOException;
 
 import static org.junit.Assert.*;
 
+@Category(IntegrationTest.class)
 public class AppServerTest {
 
     private AppServerFixture fixture;
