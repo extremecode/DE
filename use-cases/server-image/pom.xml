@@ -302,7 +302,20 @@
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <useSystemClassLoader>false</useSystemClassLoader>
                             <systemPropertyVariables>
-                                <app.test>app-server</app.test>
+                                <app.test>app-web-server</app.test>
+                                <!--suppress MavenModelInspection -->
+                                <app.port.http>${app.port.http}</app.port.http>
+                                <!--suppress MavenModelInspection -->
+                                <app.port.https>${app.port.https}</app.port.https>
+                                <!--suppress MavenModelInspection -->
+                                <app.web.server.net.HOST_NAME>${docker.host.address}</app.web.server.net.HOST_NAME>
+                                <!--suppress MavenModelInspection -->
+                                <app.web.server.test.port.http>${app.port.http}</app.web.server.test.port.http>
+                                <!--suppress MavenModelInspection -->
+                                <nom.api.gateway.test.port.https>${app.port.https}</nom.api.gateway.test.port.https>
+                                <!--suppress MavenModelInspection -->
+                                <nom.api.gateway.container.id>${docker.container.app-web-server.id}</nom.api.gateway.container.id>
+
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
