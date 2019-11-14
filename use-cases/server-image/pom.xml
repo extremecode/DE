@@ -17,7 +17,7 @@
 
     <properties>
         <server.assemble.dir>${project.build.directory}/assemble</server.assemble.dir>
-        <product.image.name>app-web-server</product.image.name>
+        <product.image.name>${product.abbreavtion}-app-server</product.image.name>
 <!--        <docker.host.address>localhost</docker.host.address>-->
     </properties>
 
