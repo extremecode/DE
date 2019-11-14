@@ -20,6 +20,8 @@
         <web.version>1.0-SNAPSHOT</web.version>
         <server.version>1.0-SNAPSHOT</server.version>
         <web.common.version>1.0-SNAPSHOT</web.common.version>
+        <product.abbreavtion>DE</product.abbreavtion>
+        <app.install.dir>/opt/${product.abbreavtion}</app.install.dir>
     </properties>
 
     <modules>

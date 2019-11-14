@@ -17,7 +17,6 @@
 
     <properties>
         <assembly.id>product</assembly.id>
-        <app.install.dir>/opt/app</app.install.dir>
         <wildfly.version>17.0.0.Final</wildfly.version>
     </properties>
 

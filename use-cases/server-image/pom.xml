@@ -17,6 +17,7 @@
 
     <properties>
         <server.assemble.dir>${project.build.directory}/assemble</server.assemble.dir>
+        <product.image.name>app-web-server</product.image.name>
 <!--        <docker.host.address>localhost</docker.host.address>-->
     </properties>
 
@@ -163,14 +164,14 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
                     <logDate>default</logDate>
-<!--                    <autoPull>${docker.pull}</autoPull>-->
+                    <autoPull>${docker.pull}</autoPull>
                     <verbose>true</verbose>
                     <showLogs>true</showLogs>
                     <removeVolumes>true</removeVolumes>
                     <images>
                         <image>
-                            <alias>app-web-server</alias>
-                            <name>app-web-server</name>
+                            <alias>${product.image.name}</alias>
+                            <name>${product.image.name}</name>
                             <build>
                                 <from>
                                     java:8
@@ -189,16 +190,16 @@
 <!--                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>-->
                                 </env>
                                 <volumes>
-                                    <volume>/var/opt/app</volume>
+                                    <volume>/var${app.install.dir}</volume>
                                 </volumes>
                                 <optimise>true</optimise>
                                 <runCmds>
                                     <run>groupadd de -g 800</run>
-                                    <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh app-web-server</run>
-                                    <run>mkdir -p /var/opt/app</run>
-                                    <run>chown -R 811:800 /var/opt/app</run>
-                                    <run>chown -R 811:800 /opt/app</run>
-                                    <run>chmod 755 /opt/app/server/bin/standalone.sh</run>
+                                    <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh ${product.image.name}</run>
+                                    <run>mkdir -p /var${app.install.dir}</run>
+                                    <run>chown -R 811:800 /var${app.install.dir}</run>
+                                    <run>chown -R 811:800 ${app.install.dir}</run>
+                                    <run>chmod 755 ${app.install.dir}/server/bin/standalone.sh</run>
                                 </runCmds>
                                 <user>811</user>
                                 <assembly>
@@ -208,7 +209,7 @@
                                 </assembly>
                                 <entryPoint>
                                     <!-- shell form  -->
-                                    <shell>/opt/app/server/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml</shell>
+                                    <shell>${app.install.dir}/server/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml</shell>
                                 </entryPoint>
                             </build>
                             <run>
@@ -336,7 +337,7 @@
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <useSystemClassLoader>false</useSystemClassLoader>
                             <systemPropertyVariables>
-                                <app.test>app-web-server</app.test>
+                                <app.test>${product.image.name}</app.test>
                                 <!--suppress MavenModelInspection -->
                                 <app.port.http>${app.port.http}</app.port.http>
                                 <!--suppress MavenModelInspection -->
@@ -348,7 +349,7 @@
                                 <!--suppress MavenModelInspection -->
                                 <nom.api.gateway.test.port.https>${app.port.https}</nom.api.gateway.test.port.https>
                                 <!--suppress MavenModelInspection -->
-                                <nom.api.gateway.container.id>${docker.container.app-web-server.id}</nom.api.gateway.container.id>
+                                <nom.api.gateway.container.id>${docker.container.${product.image.name}.id}</nom.api.gateway.container.id>
 
                             </systemPropertyVariables>
                         </configuration>
