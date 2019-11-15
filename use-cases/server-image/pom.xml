@@ -270,11 +270,6 @@
                                     <!--                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>-->
                                 </env>
                                 <optimise>true</optimise>
-                                <runCmds>
-                                    <run>groupadd de -g 800</run>
-                                    <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh ${product.db.image.name}</run>
-                                </runCmds>
-                                <user>811</user>
                             </build>
                             <run>
                                 <ports>
