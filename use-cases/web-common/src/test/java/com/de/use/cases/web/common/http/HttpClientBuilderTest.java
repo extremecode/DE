@@ -1,4 +1,4 @@
-package com.de.use.cases.web.common.auth.jwt;
+package com.de.use.cases.web.common.http;
 
 
 import org.junit.After;
