@@ -273,16 +273,16 @@
 
                             </build>
                             <run>
+                                <ports>
+                                    <port>db.port.http:5432</port>
+                                </ports>
                                 <env>
                                     <POSTGRES_SERVICE>${product.db.image.name}</POSTGRES_SERVICE>
                                     <POSTGRES_USER>${product.abbreavtion}</POSTGRES_USER>
                                     <POSTGRES_PASSWORD>${product.abbreavtion}</POSTGRES_PASSWORD>
                                     <PG_EXTERNAL_ACCESS_PORT>${db.port.http}</PG_EXTERNAL_ACCESS_PORT>
                                 </env>
-                                <ports>
-                                    <port>db.port.http:5432</port>
-                                </ports>
-
+                                
                                 <wait>
                                     <log>${product.db.image.name} database system is ready to accept connections at port ${db.port.http}</log>
                                     <time>20000</time>
