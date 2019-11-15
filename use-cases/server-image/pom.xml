@@ -18,6 +18,7 @@
     <properties>
         <server.assemble.dir>${project.build.directory}/assemble</server.assemble.dir>
         <product.image.name>${product.abbreavtion}-app-server</product.image.name>
+        <product.db.image.name>${product.abbreavtion}-app-db</product.db.image.name>
 <!--        <docker.host.address>localhost</docker.host.address>-->
     </properties>
 
@@ -243,9 +244,51 @@
                                         <allowAllHosts>true</allowAllHosts>
                                     </http>
                                 </wait>
+                                <links>
+                                    <link>${product.db.image.name}:db</link>
+                                </links>
                             </run>
                         </image>
 
+                        <image>
+                            <alias>${product.db.image.name}</alias>
+                            <name>${product.db.image.name}</name>
+                            <build>
+                                <from>
+                                    postgres:9
+                                </from>
+                                <maintainer>akash.sah5@gmail.com</maintainer>
+                                <tags>
+                                    <tag>${server.version}</tag>
+                                </tags>
+                                <ports>
+                                    <port>5432</port>
+                                </ports>
+                                <env>
+                                    <IMAGE_BUILD_VERSION>${server.version}</IMAGE_BUILD_VERSION>
+                                    <IMAGE_BUILD_NUMBER>1.0.1</IMAGE_BUILD_NUMBER>
+                                    <!--                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>-->
+                                </env>
+                                <optimise>true</optimise>
+
+                            </build>
+                            <run>
+                                <env>
+                                    <POSTGRES_SERVICE>${product.db.image.name}</POSTGRES_SERVICE>
+                                    <POSTGRES_USER>${product.abbreavtion}</POSTGRES_USER>
+                                    <POSTGRES_PASSWORD>${product.abbreavtion}</POSTGRES_PASSWORD>
+                                    <PG_EXTERNAL_ACCESS_PORT>${db.port.http}</PG_EXTERNAL_ACCESS_PORT>
+                                </env>
+                                <ports>
+                                    <port>db.port.http:5432</port>
+                                </ports>
+
+                                <wait>
+                                    <log>${product.db.image.name} database system is ready to accept connections at port ${db.port.http}</log>
+                                    <time>20000</time>
+                                </wait>
+                            </run>
+                        </image>
 
 
                     </images>

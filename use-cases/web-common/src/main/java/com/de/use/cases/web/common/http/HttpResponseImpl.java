@@ -1,4 +1,4 @@
-package com.de.use.cases.web.common.http;
+package com.de.use.cases.web.common.auth.jwt;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;

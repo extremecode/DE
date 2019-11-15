@@ -1,4 +1,4 @@
-package com.de.use.cases.web.common.http;
+package com.de.use.cases.web.common.auth.jwt;
 
 import java.io.IOException;
 
