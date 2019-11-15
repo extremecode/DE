@@ -283,8 +283,9 @@
                                     <PG_EXTERNAL_ACCESS_PORT>${db.port.http}</PG_EXTERNAL_ACCESS_PORT>
                                 </env>
 
+
                                 <wait>
-                                    <log>${product.db.image.name} database system is ready to accept connections</log>
+                                    <log>database system is ready to accept connections</log>
                                     <time>20000</time>
                                 </wait>
                             </run>
