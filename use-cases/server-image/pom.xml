@@ -273,7 +273,6 @@
                                 <runCmds>
                                     <run>groupadd de -g 800</run>
                                     <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh ${product.db.image.name}</run>
-                                    <run>chown -R 811:800 /</run>
                                 </runCmds>
                                 <user>811</user>
                             </build>
