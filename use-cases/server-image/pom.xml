@@ -191,16 +191,17 @@
 <!--                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>-->
                                 </env>
                                 <volumes>
-                                    <volume>/var${app.install.dir}</volume>
+                                    <volume>/var${server.install.dir}</volume>
                                 </volumes>
                                 <optimise>true</optimise>
                                 <runCmds>
                                     <run>groupadd de -g 800</run>
                                     <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh ${product.image.name}</run>
-                                    <run>mkdir -p /var${app.install.dir}</run>
-                                    <run>chown -R 811:800 /var${app.install.dir}</run>
-                                    <run>chown -R 811:800 ${app.install.dir}</run>
-                                    <run>chmod 755 ${app.install.dir}/server/bin/standalone.sh</run>
+                                    <run>mkdir -p /var${server.install.dir}</run>
+                                    <run>mkdir -p ${app.logs.dir}</run>
+                                    <run>chown -R 811:800 /var${server.install.dir}</run>
+                                    <run>chown -R 811:800 ${server.install.dir}</run>
+                                    <run>chmod 755 ${server.install.dir}/server/bin/standalone.sh</run>
                                 </runCmds>
                                 <user>811</user>
                                 <assembly>
@@ -210,7 +211,7 @@
                                 </assembly>
                                 <entryPoint>
                                     <!-- shell form  -->
-                                    <shell>${app.install.dir}/server/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml</shell>
+                                    <shell>${server.install.dir}/server/bin/standalone.sh -b 0.0.0.0 -bmanagement=0.0.0.0 -c standalone-full.xml</shell>
                                 </entryPoint>
                             </build>
                             <run>
@@ -250,45 +251,45 @@
                             </run>
                         </image>
 
-                        <image>
-                            <alias>${product.db.image.name}</alias>
-                            <name>${product.db.image.name}</name>
-                            <build>
-                                <from>
-                                    postgres:9
-                                </from>
-                                <maintainer>akash.sah5@gmail.com</maintainer>
-                                <tags>
-                                    <tag>${server.version}</tag>
-                                </tags>
-                                <ports>
-                                    <port>5432</port>
-                                </ports>
-                                <env>
-                                    <IMAGE_BUILD_VERSION>${server.version}</IMAGE_BUILD_VERSION>
-                                    <IMAGE_BUILD_NUMBER>1.0.1</IMAGE_BUILD_NUMBER>
-                                    <!--                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>-->
-                                </env>
-                                <optimise>true</optimise>
-                            </build>
-                            <run>
-                                <ports>
-                                    <port>db.port.http:5432</port>
-                                </ports>
-                                <env>
-                                    <POSTGRES_SERVICE>${product.db.image.name}</POSTGRES_SERVICE>
-                                    <POSTGRES_USER>${product.abbreavtion}</POSTGRES_USER>
-                                    <POSTGRES_PASSWORD>${product.abbreavtion}</POSTGRES_PASSWORD>
-                                    <PG_EXTERNAL_ACCESS_PORT>${db.port.http}</PG_EXTERNAL_ACCESS_PORT>
-                                </env>
+<!--                        <image>-->
+<!--                            <alias>${product.db.image.name}</alias>-->
+<!--                            <name>${product.db.image.name}</name>-->
+<!--                            <build>-->
+<!--                                <from>-->
+<!--                                    postgres:9-->
+<!--                                </from>-->
+<!--                                <maintainer>akash.sah5@gmail.com</maintainer>-->
+<!--                                <tags>-->
+<!--                                    <tag>${server.version}</tag>-->
+<!--                                </tags>-->
+<!--                                <ports>-->
+<!--                                    <port>5432</port>-->
+<!--                                </ports>-->
+<!--                                <env>-->
+<!--                                    <IMAGE_BUILD_VERSION>${server.version}</IMAGE_BUILD_VERSION>-->
+<!--                                    <IMAGE_BUILD_NUMBER>1.0.1</IMAGE_BUILD_NUMBER>-->
+<!--                                    &lt;!&ndash;                                    <IMAGE_BUILD_TIMESTAMP>${build.timestamp}</IMAGE_BUILD_TIMESTAMP>&ndash;&gt;-->
+<!--                                </env>-->
+<!--                                <optimise>true</optimise>-->
+<!--                            </build>-->
+<!--                            <run>-->
+<!--                                <ports>-->
+<!--                                    <port>db.port.http:5432</port>-->
+<!--                                </ports>-->
+<!--                                <env>-->
+<!--                                    <POSTGRES_SERVICE>${product.db.image.name}</POSTGRES_SERVICE>-->
+<!--                                    <POSTGRES_USER>${product.abbreavtion}</POSTGRES_USER>-->
+<!--                                    <POSTGRES_PASSWORD>${product.abbreavtion}</POSTGRES_PASSWORD>-->
+<!--                                    <PG_EXTERNAL_ACCESS_PORT>${db.port.http}</PG_EXTERNAL_ACCESS_PORT>-->
+<!--                                </env>-->
 
 
-                                <wait>
-                                    <log>database system is ready to accept connections</log>
-                                    <time>20000</time>
-                                </wait>
-                            </run>
-                        </image>
+<!--                                <wait>-->
+<!--                                    <log>database system is ready to accept connections</log>-->
+<!--                                    <time>20000</time>-->
+<!--                                </wait>-->
+<!--                            </run>-->
+<!--                        </image>-->
 
 
                     </images>

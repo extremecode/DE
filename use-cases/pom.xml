@@ -22,6 +22,8 @@
         <web.common.version>1.0-SNAPSHOT</web.common.version>
         <product.abbreavtion>de</product.abbreavtion>
         <app.install.dir>/opt/${product.abbreavtion}</app.install.dir>
+        <app.logs.dir>${app.install.dir}/logs</app.logs.dir>
+        <server.install.dir>${app.install.dir}/ext</server.install.dir>
     </properties>
 
     <modules>
