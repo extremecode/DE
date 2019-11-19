@@ -245,9 +245,9 @@
                                         <allowAllHosts>true</allowAllHosts>
                                     </http>
                                 </wait>
-                                <links>
-                                    <link>${product.db.image.name}:db</link>
-                                </links>
+<!--                                <links>-->
+<!--                                    <link>${product.db.image.name}:db</link>-->
+<!--                                </links>-->
                             </run>
                         </image>
 
