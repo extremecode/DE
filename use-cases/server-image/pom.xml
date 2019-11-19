@@ -197,8 +197,9 @@
                                 <runCmds>
                                     <run>groupadd de -g 800</run>
                                     <run>useradd -u 811 --no-create-home --no-user-group --groups de -s /bin/sh ${product.image.name}</run>
-                                    <run>mkdir -p /var${server.install.dir}</run>
+                                    <run>mkdir -p /var${app.install.dir}</run>
                                     <run>mkdir -p ${app.logs.dir}</run>
+                                    <run>export JAVA_OPTS="-Djava.util.logging.config.file=${app.logs.dir}/logging.properties"</run>
                                     <run>chown -R 811:800 /var${server.install.dir}</run>
                                     <run>chown -R 811:800 ${server.install.dir}</run>
                                     <run>chmod 755 ${server.install.dir}/server/bin/standalone.sh</run>
