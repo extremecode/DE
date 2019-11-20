@@ -42,7 +42,7 @@ public class AppServerFixture {
 
 
     public void post(final String path,final String contentType,final String json, final TestAssertion<HttpResponse> consumer) {
-        String uri = "https://" + HOST + ":" + HTTPS_PORT + path;
+        String uri = "http://" + HOST + ":" + HTTP_PORT + path;
 
         try {
             final HttpResponse response = post(uri,contentType,json).execute();
@@ -60,7 +60,7 @@ public class AppServerFixture {
 
     public void get(final String path, final TestAssertion<HttpResponse> consumer) {
 
-        String uri = "https://" + HOST + ":" + HTTPS_PORT + path;
+        String uri = "http://" + HOST + ":" + HTTP_PORT + path;
 
         try {
             final HttpResponse response = get(uri).execute();
