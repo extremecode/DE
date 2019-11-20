@@ -27,5 +27,12 @@
                 <include>**/*</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>${product.assemble.dir}/cert</directory>
+            <outputDirectory>${server.install.dir}/server/standalone/configuration</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </assembly>
