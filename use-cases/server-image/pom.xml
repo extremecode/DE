@@ -392,7 +392,7 @@
                                 <!--suppress MavenModelInspection -->
                                 <app.web.server.test.port.http>${app.port.http}</app.web.server.test.port.http>
                                 <!--suppress MavenModelInspection -->
-                                <nom.api.gateway.test.port.https>${app.port.https}</nom.api.gateway.test.port.https>
+                                <app.web.server.test.port.https>${app.port.https}</app.web.server.test.port.https>
                                 <!--suppress MavenModelInspection -->
                                 <nom.api.gateway.container.id>${docker.container.${product.image.name}.id}</nom.api.gateway.container.id>
 
