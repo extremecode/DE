@@ -16,22 +16,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <web.version>1.0-SNAPSHOT</web.version>
-        <server.version>1.0-SNAPSHOT</server.version>
-        <web.common.version>1.0-SNAPSHOT</web.common.version>
-        <product.abbreavtion>de</product.abbreavtion>
-        <app.install.dir>/opt/${product.abbreavtion}</app.install.dir>
-        <app.logs.dir>${app.install.dir}/logs</app.logs.dir>
-        <server.install.dir>${app.install.dir}/ext</server.install.dir>
-    </properties>
-
     <modules>
-        <module>web-common</module>
-        <module>sample-web</module>
-        <module>server</module>
-        <module>server-image</module>
-
+        <module>application-server</module>
     </modules>
 
 </project>

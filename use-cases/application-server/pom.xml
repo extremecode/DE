@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <!-- parent pom -->
+        <groupId>com.de.use.cases</groupId>
+        <artifactId>use-cases</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.de.use.cases</groupId>
+    <artifactId>application-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <web.version>1.0-SNAPSHOT</web.version>
+        <server.version>1.0-SNAPSHOT</server.version>
+        <web.common.version>1.0-SNAPSHOT</web.common.version>
+        <product.abbreavtion>de</product.abbreavtion>
+        <app.install.dir>/opt/${product.abbreavtion}</app.install.dir>
+        <app.logs.dir>${app.install.dir}/logs</app.logs.dir>
+        <server.install.dir>${app.install.dir}/ext</server.install.dir>
+    </properties>
+
+    <modules>
+        <module>web-common</module>
+        <module>sample-web</module>
+        <module>server</module>
+        <module>server-image</module>
+
+    </modules>
+
+</project>
