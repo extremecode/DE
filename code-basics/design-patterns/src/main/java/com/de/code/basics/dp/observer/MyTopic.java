@@ -35,17 +35,24 @@ public class MyTopic implements Subject {
     public void nortifyObservers() {
         List<Observer> observersToNortify= null;
         synchronized (MUTEX){
-               if(!changed)
-                   return;
-               observersToNortify = new ArrayList<Observer>(this.observers);
+            if(!changed)
+                return;
+            observersToNortify = new ArrayList<Observer>(this.observers);
         }
         observersToNortify.forEach(observer -> {
-           observer.update();
+            observer.update();
         });
     }
 
     @Override
     public Object getUpdate(Observer observer) {
-        return null;
+        return this.message;
+    }
+
+    public void postMessage(String msg){
+        System.out.println("Message Posted to Topic:"+msg);
+        this.message=msg;
+        this.changed=true;
+        nortifyObservers();
     }
 }
