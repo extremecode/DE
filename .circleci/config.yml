@@ -39,9 +39,6 @@ jobs:
       - run: mvn clean install
       - run: chmod +x ./dist/build.sh
       - run: ./dist/build.sh target/artifacts target/reports/test
-#      - run: mkdir -p target/artifacts target/reports/test
-#      - run: find . -type f -name '*.jar' -exec cp -at target/artifacts {} +
-#      - run: find . -type f -path '*surefire-reports*/*' -name '*.xml' -exec cp -at target/reports/test {} +
       - store_artifacts:
          path: target/artifacts
          destination: /artifacts/
