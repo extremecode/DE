@@ -1,4 +1,4 @@
-package com.de.code.basics.algorithms.dijkstra;
+package com.de.code.basics.algorithms.graph;
 
 import org.junit.After;
 import org.junit.Before;
