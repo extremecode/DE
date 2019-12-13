@@ -28,6 +28,8 @@
 
     <modules>
         <module>web-common</module>
+        <module>server-db</module>
+        <module>web-ejb</module>
         <module>sample-web</module>
         <module>server</module>
         <module>server-image</module>
