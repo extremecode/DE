@@ -19,4 +19,13 @@ public class Stack<T> {
         return obj;
     }
 
+    public T peek(){
+        return  this.stack.get(this.stack.size() -1);
+    }
+
+
+    public boolean isEmpty(){
+         return stack.size()==0?true: false;
+    }
+
 }
