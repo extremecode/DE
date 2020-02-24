@@ -4,7 +4,7 @@ import com.de.code.basics.algorithms.ds.Queue;
 
 import java.util.TreeMap;
 
-public class BottomView {
+public class TopView {
     Node<Integer> root;
 
     int hd = 0;
@@ -19,7 +19,8 @@ public class BottomView {
 
         while (!queue.isEmpty()){
             Node temp = queue.remove();
-            map.put(temp.hd,(Integer) temp.data);
+            if(!map.containsKey(temp.hd))
+                map.put(temp.hd,(Integer) temp.data);
 
             hd = temp.hd;
             if(temp.left!=null){

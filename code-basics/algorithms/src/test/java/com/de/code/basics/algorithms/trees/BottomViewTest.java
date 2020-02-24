@@ -37,7 +37,9 @@ public class BottomViewTest extends ConsoleFixture {
         tree.display();
         assertEquals("Bottom view of the given binary tree:\n" +
                 "5\n" +
-                "8\n" +
-                "20\n",console());
+                "10\n" +
+                "4\n" +
+                "14\n" +
+                "25\n",console());
     }
 }
