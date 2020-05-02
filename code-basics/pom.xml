@@ -23,6 +23,7 @@
         <module>data-structures</module>
         <module>design-patterns</module>
         <module>multi-threadng</module>
+        <module>system-design</module>
     </modules>
 
     <dependencies>
