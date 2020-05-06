@@ -140,10 +140,12 @@
                                     <run>yum install wget gcc-c++ ca-certificates nginx gettext-tools -y</run>
                                     <run>yum install kernel-devel make man -y</run>
                                     <run>mkdir -p /tmp/install</run>
+                                    <run>chmod 755 /tmp/install/boot.sh</run>
                                     <run>/tmp/install/boot.sh</run>
+                                    <run>mkdir -p /var${cache.cluster.dir}</run>
                                     <run>chown -R 811:800 /var${cache.cluster.dir}</run>
                                     <run>chown -R 811:800 ${cache.cluster.dir}</run>
-                                    <run>chmod 755 /tmp/install/startupscript.sh</run>
+                                    <run>chown 811:800 /tmp/install/startupscript.sh</run>
                                 </runCmds>
                                 <user>811</user>
                                 <assembly>
