@@ -3,9 +3,10 @@ package com.de.use.cases.web.common.http;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
+import java.io.Closeable;
 import java.io.IOException;
 
-public class HttpClientBuilderImpl implements HttpClientBuilder {
+public class HttpClientBuilderImpl implements HttpClientBuilder,Closeable {
 
     private CloseableHttpClient httpClient;
 

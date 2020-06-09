@@ -16,9 +16,13 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <web.common.version>1.0-SNAPSHOT</web.common.version>
+    </properties>
     <modules>
         <module>api-gateway</module>
         <module>application-server</module>
+        <module>web-server</module>
     </modules>
 
 </project>

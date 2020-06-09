@@ -1,13 +1,11 @@
 package com.de.use.cases.server;
 
-import com.de.use.cases.web.common.http.HttpClientBuilder;
-import com.de.use.cases.web.common.http.HttpClientBuilderImpl;
-import com.de.use.cases.web.common.http.HttpRequest;
-import com.de.use.cases.web.common.http.HttpResponse;
+import com.de.use.cases.web.common.http.SystemFixture;
 
-import java.io.IOException;
 
-public class AppServerFixture {
+import java.util.Properties;
+
+public class AppServerFixture extends SystemFixture {
 
 
     protected static final String HOST = System.getProperty("app.web.server.net.HOST_NAME", "localhost");
@@ -16,62 +14,13 @@ public class AppServerFixture {
     protected static final int HTTP_PORT = Integer.getInteger("app.web.server.test.port.http", 8080);
     protected static final int HTTPS_PORT = Integer.getInteger("app.web.server.test.port.https", 8443);
 
-    private HttpClientBuilder http;
 
     public AppServerFixture() {
-        init();
-    }
-
-    public void init(){
-        http = new HttpClientBuilderImpl();
-    }
-
-    public void destroy() throws IOException {
-        http.close();
-    }
-
-    protected HttpRequest get(final String uri) {
-        return this.http.get(uri);
-    }
-
-    protected HttpRequest post(final String uri,final String contentType,final String json) {
-        return this.http.get(uri);
-    }
-
-
-    public void post(final String path,final String contentType,final String json, final TestAssertion<HttpResponse> consumer) {
-        String uri = "http://" + HOST + ":" + HTTP_PORT + path;
-
-        try {
-            final HttpResponse response = post(uri,contentType,json).execute();
-            try {
-                consumer.assertOutcome(response);
-            } finally {
-                response.close();
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void get(final String path, final TestAssertion<HttpResponse> consumer) {
-
-        String uri = "http://" + HOST + ":" + HTTP_PORT + path;
-
-        try {
-            final HttpResponse response = get(uri).execute();
-            try {
-                consumer.assertOutcome(response);
-            } finally {
-                response.close();
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Properties properties = new Properties();
+        properties.put("host",HOST);
+        properties.put("http.port",HTTP_PORT);
+        properties.put("http.type","http");
+        super.init(properties);
     }
 
 

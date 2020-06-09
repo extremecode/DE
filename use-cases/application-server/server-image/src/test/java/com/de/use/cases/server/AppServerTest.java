@@ -15,12 +15,11 @@ public class AppServerTest {
     @Before
     public void setUp() throws Exception {
         fixture = new AppServerFixture();
-        fixture.init();
     }
 
     @After
     public void tearDown() throws Exception {
-        fixture.destroy();
+        fixture.close();
         fixture = null;
     }
 
