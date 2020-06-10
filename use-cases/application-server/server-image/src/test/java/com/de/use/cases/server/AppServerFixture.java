@@ -1,5 +1,6 @@
 package com.de.use.cases.server;
 
+import com.de.use.cases.web.common.http.HttpClientBuilderImpl;
 import com.de.use.cases.web.common.http.SystemFixture;
 
 
@@ -16,6 +17,10 @@ public class AppServerFixture extends SystemFixture {
 
 
     public AppServerFixture() {
+
+    }
+
+    public void init(){
         Properties properties = new Properties();
         properties.put("host",HOST);
         properties.put("http.port",HTTP_PORT);
