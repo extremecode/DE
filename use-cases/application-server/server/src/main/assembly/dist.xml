@@ -1,0 +1,38 @@
+<assembly>
+    <id>${assembly.id}</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}/dist/wildfly-${wildfly.version}</directory>
+            <outputDirectory>${server.install.dir}/server</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/dependencies</directory>
+            <outputDirectory>${server.install.dir}/server/standalone/deployments</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${product.assemble.dir}/logs</directory>
+            <outputDirectory>${app.logs.dir}</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${product.assemble.dir}/cert</directory>
+            <outputDirectory>${server.install.dir}/server/standalone/configuration</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
