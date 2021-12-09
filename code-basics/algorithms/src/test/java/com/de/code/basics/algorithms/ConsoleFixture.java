@@ -5,6 +5,8 @@ import org.junit.Before;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ConsoleFixture {
     protected ByteArrayOutputStream consoleOutput;
@@ -22,5 +24,9 @@ public class ConsoleFixture {
 
     public String console(){
         return this.consoleOutput.toString().replace("\r","");
+    }
+
+    public <T> String commaSeprated(List<T> items){
+        return items.stream().map(x->x.toString()).collect(Collectors.joining(","));
     }
 }
